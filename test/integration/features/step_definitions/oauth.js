@@ -33,10 +33,10 @@ module.exports = function () {
             var jwt = callout.getAccessTokenFromResponseBodyPath("$.access_token");
 
             var tokenData=jwt.split('.')[1];
-            console.log(tokenData);
+            // console.log(tokenData);
             var tokenData=JSON.parse(atob(tokenData));
             var token=tokenData.access_token;
-            console.log(token);
+            // console.log(token);
 
             // console.log( "EDGE TOKEN: " + token);
             self.apickli.setAccessToken(token);
