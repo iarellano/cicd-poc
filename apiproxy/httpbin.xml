@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="2" name="httpbin">
+    <Basepaths>/bin</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1515530592991</CreatedAt>
+    <CreatedBy>isciad94@gmail.com</CreatedBy>
+    <Description></Description>
+    <DisplayName>httpbin</DisplayName>
+    <LastModifiedAt>1515543300938</LastModifiedAt>
+    <LastModifiedBy>isciad94@gmail.com</LastModifiedBy>
+    <Policies>
+        <Policy>GetUuid</Policy>
+        <Policy>MashUpIpAndUuid</Policy>
+        <Policy>Raise-Fault-1</Policy>
+        <Policy>VerifyAccessToken</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://MashUpIpAndUuid.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+        <TargetEndpoint>facebook</TargetEndpoint>
+        <TargetEndpoint>google</TargetEndpoint>
+    </TargetEndpoints>
+    <validate>false</validate>
+</APIProxy>
