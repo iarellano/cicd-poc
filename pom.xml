@@ -98,8 +98,8 @@
                 <api.name>httpbin</api.name>
                 <api.tokenDomain>isciad94-trial-prod.apigee.net</api.tokenDomain>
                 <api.tokenBasepath>/v1/mg/oauth2</api.tokenBasepath>
-                <api.clientId>NeudUQOsbLOKxyQyShoGcoI7NqD4yLHJ</api.clientId>
-                <api.clientSecret>mA8kEppJ5DiS0Knk</api.clientSecret>
+                <api.clientId>SOF9d3mYGMKOKXzIa7pAbwiidN5dQEbZ</api.clientId>
+                <api.clientSecret>hAqVRcBzSkGtQRVG</api.clientSecret>
             </properties>
         </profile>
     </profiles>
