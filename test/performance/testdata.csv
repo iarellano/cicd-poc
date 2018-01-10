@@ -1,0 +1,5 @@
+testcaseid,userstory,testcasedescription,env,servername,path,execute,assertheader,assertcontent,assertcontentnegative,scopes
+spec-check-1-1,spec-check-1,valid ping,dev,apidev.catdevservices.com,/spec-check/ping,Y,HTTP/1.1 200 OK,PONG,NON-EXISTENT-WORD,manage:all
+spec-check-1-2,spec-check-2,valid status,dev,apidev.catdevservices.com,/spec-check/status,Y,HTTP/1.1 200 OK,STATUS,NON-EXISTENT-WORD,
+spec-check-1-3,spec-check-3,path suffix not found,dev,apidev.catdevservices.com,/spec-check/foo,Y,HTTP/1.1 404 Not Found,No resource,NON-EXISTENT-WORD,
+spec-check-1-4,spec-check-4,path suffix not found,dev,apidev.catdevservices.com,/spec-check/foo/bar,Y,HTTP/1.1 404 Not Found,No resource,NON-EXISTENT-WORD,

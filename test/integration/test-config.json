@@ -1,0 +1,13 @@
+{
+    "parameters": {
+        "domain": "apidev.catdevservices.com",
+        "basepath": "/spec-check",
+        "apiproxy": "spec-check-v1",
+        "tokenDomain": "apidev.catdevservices.com",
+        "tokenBasepath": "/identity",
+        "pingTokenDomain": "fedloginqa.cat.com",
+        "pingTokenBasepath": "/as",
+        "pingClientId": "__PING_CLIENT_ID__",
+        "pingClientSecret": "__PING_CLIENT_SECRET__"
+    }
+}
