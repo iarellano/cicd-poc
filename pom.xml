@@ -62,7 +62,7 @@
                 <apigee.authtype>basic</apigee.authtype>
                 <apigee.options>override</apigee.options>
                 <apigee.delay>3000</apigee.delay>
-                <api.testtag>@intg</api.testtag>
+                <api.testtag>@intg,@api</api.testtag>
                 <apigee.config.options>create</apigee.config.options>
                 <apigee.config.dir>./target/edge</apigee.config.dir>
             </properties>
@@ -314,21 +314,7 @@
                             </commandlineArgs>
                         </configuration>
                     </execution>
-                    <!-- run pingFederate test -->
-                    <!--<execution>-->
-                        <!--<id>pingFederate</id>-->
-                        <!--<phase>install</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>exec</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<executable>node</executable>-->
-                            <!--<commandlineArgs>-->
-                                <!--./node_modules/cucumber/bin/cucumber.js target/test/pingFederateTest/features-->
-                            <!--</commandlineArgs>-->
-                            <!--<skip>${apigee.skipTests}</skip>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
+
                     <!-- run integration tests -->
                     <execution>
                         <id>integration</id>
@@ -339,10 +325,9 @@
                         <configuration>
                             <executable>node</executable>
                             <commandlineArgs>
-                                ./node_modules/cucumber/bin/cucumber.js target/test/integration/features --tags
+                                ./node_modules/cucumber/bin/cucumber.js --format json:./report.json target/test/integration/features --tags
                                 ${api.testtag}
                             </commandlineArgs>
-                            <skip>${apigee.skipTests}</skip>
                         </configuration>
                     </execution>
 
@@ -430,7 +415,6 @@
                             <goal>clean</goal>
                         </goals>
                     </execution>
-                    <!-- -->
                 </executions>
             </plugin>
         </plugins>
