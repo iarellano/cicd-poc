@@ -411,13 +411,13 @@
                         </configuration>
                     </execution>
                     <!-- comment this out to leave the target dir for debugging, post mortem -->
-                    <!--<execution>-->
-                        <!--<id>auto-clean-install</id>-->
-                        <!--<phase>install</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>clean</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
+                    <execution>
+                        <id>auto-clean-install</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>
