@@ -281,75 +281,75 @@
                 </executions>
             </plugin>
 
-            <!--<plugin>-->
-                <!--<groupId>org.codehaus.mojo</groupId>-->
-                <!--<artifactId>exec-maven-plugin</artifactId>-->
-                <!--<version>1.3.2</version>-->
-                <!--<executions>-->
-                    <!--&lt;!&ndash; npm install &ndash;&gt;-->
-                    <!--<execution>-->
-                        <!--<id>npm-install</id>-->
-                        <!--<phase>validate</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>exec</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<executable>npm</executable>-->
-                            <!--<commandlineArgs>-->
-                                <!--install-->
-                            <!--</commandlineArgs>-->
-                            <!--<skip>${apigee.skipTests}</skip>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--&lt;!&ndash; run unit tests &ndash;&gt;-->
-                    <!--<execution>-->
-                        <!--<id>unit</id>-->
-                        <!--<phase>validate</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>exec</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<executable>node</executable>-->
-                            <!--<commandlineArgs>-->
-                                <!--./node_modules/mocha/bin/mocha test/unit-->
-                            <!--</commandlineArgs>-->
-                            <!--<skip>${apigee.skipTests}</skip>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--&lt;!&ndash; run pingFederate test &ndash;&gt;-->
-                    <!--<execution>-->
-                        <!--<id>pingFederate</id>-->
-                        <!--<phase>install</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>exec</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<executable>node</executable>-->
-                            <!--<commandlineArgs>-->
-                                <!--./node_modules/cucumber/bin/cucumber.js target/test/pingFederateTest/features-->
-                            <!--</commandlineArgs>-->
-                            <!--<skip>${apigee.skipTests}</skip>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                    <!--&lt;!&ndash; run integration tests &ndash;&gt;-->
-                    <!--<execution>-->
-                        <!--<id>integration</id>-->
-                        <!--<phase>install</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>exec</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<executable>node</executable>-->
-                            <!--<commandlineArgs>-->
-                                <!--./node_modules/cucumber/bin/cucumber.js target/test/integration/features &#45;&#45;tags-->
-                                <!--${api.testtag}-->
-                            <!--</commandlineArgs>-->
-                            <!--<skip>${apigee.skipTests}</skip>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.3.2</version>
+                <executions>
+                    <!-- npm install -->
+                    <execution>
+                        <id>npm-install</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>npm</executable>
+                            <commandlineArgs>
+                                install
+                            </commandlineArgs>
+                            <skip>${apigee.skipTests}</skip>
+                        </configuration>
+                    </execution>
+                    <!-- run unit tests -->
+                    <execution>
+                        <id>unit</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>node</executable>
+                            <commandlineArgs>
+                                ./node_modules/mocha/bin/mocha test/unit
+                            </commandlineArgs>
+                            <skip>${apigee.skipTests}</skip>
+                        </configuration>
+                    </execution>
+                    <!-- run pingFederate test -->
+                    <execution>
+                        <id>pingFederate</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>node</executable>
+                            <commandlineArgs>
+                                ./node_modules/cucumber/bin/cucumber.js target/test/pingFederateTest/features
+                            </commandlineArgs>
+                            <skip>${apigee.skipTests}</skip>
+                        </configuration>
+                    </execution>
+                    <!-- run integration tests -->
+                    <execution>
+                        <id>integration</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>node</executable>
+                            <commandlineArgs>
+                                ./node_modules/cucumber/bin/cucumber.js target/test/integration/features --tags
+                                ${api.testtag}
+                            </commandlineArgs>
+                            <skip>${apigee.skipTests}</skip>
+                        </configuration>
+                    </execution>
 
-                <!--</executions>-->
-            <!--</plugin>-->
+                </executions>
+            </plugin>
 
             <!--<plugin>-->
                 <!--<groupId>com.lazerycode.jmeter</groupId>-->
