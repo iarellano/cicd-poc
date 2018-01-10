@@ -1,5 +1,7 @@
 /* globals context */
 
+// Just a test
+
 var orginObj=JSON.parse(context.getVariable("response.content"));
  var uuidObj=JSON.parse(context.getVariable("uuidResponse.content"));
  
