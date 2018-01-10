@@ -30,7 +30,6 @@
                     <Name>Raise-Fault-1</Name>
                 </Step>
             </Request>
-            <Condition>1 == 2</Condition>
         </Flow>
     </Flows>
     <PostFlow name="PostFlow">
@@ -43,14 +42,6 @@
         <VirtualHost>default</VirtualHost>
         <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>
-    <RouteRule name="google">
-        <TargetEndpoint>google</TargetEndpoint>
-        <Condition>(proxy.pathsuffix MatchesPath "/google") and (request.verb = "GET")</Condition>
-    </RouteRule>
-    <RouteRule name="facebook">
-        <TargetEndpoint>facebook</TargetEndpoint>
-        <Condition>(proxy.pathsuffix MatchesPath "/facebook") and (request.verb = "GET")</Condition>
-    </RouteRule>
     <RouteRule name="httpbin">
         <TargetEndpoint>default</TargetEndpoint>
         <Condition>(proxy.pathsuffix MatchesPath "/ip") and (request.verb = "GET")</Condition>
