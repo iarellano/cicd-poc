@@ -48,25 +48,6 @@
     </properties>
 
     <profiles>
-        <!--<profile>-->
-            <!--<id>local</id>-->
-            <!--<properties>-->
-                <!--<id>local</id>-->
-                <!--<apigee.profile>local</apigee.profile>-->
-                <!--<apigee.env>local</apigee.env>-->
-                <!--<apigee.hosturl>http://192.168.200.101:8080/v1</apigee.hosturl>-->
-                <!--<apigee.apiversion>v1</apigee.apiversion>-->
-                <!--<apigee.org>development</apigee.org>-->
-                <!--<apigee.username>opdk@google.com</apigee.username>-->
-                <!--<apigee.password>Secret123</apigee.password>-->
-                <!--<apigee.authtype>basic</apigee.authtype>-->
-                <!--<apigee.options>validate,update</apigee.options>-->
-                <!--<apigee.delay>3000</apigee.delay>-->
-                <!--<api.testtag>@intg</api.testtag>-->
-                <!--<apigee.config.options>create</apigee.config.options>-->
-                <!--<apigee.config.dir>./target/edge</apigee.config.dir>-->
-            <!--</properties>-->
-        <!--</profile>-->
         <profile>
             <id>test</id>
             <properties>
@@ -78,7 +59,6 @@
                 <apigee.username>${api.username}</apigee.username>
                 <apigee.password>${api.password}</apigee.password>
                 <apigee.authtype>basic</apigee.authtype>
-                <!--<apigee.options>validate,update</apigee.options>-->
                 <apigee.options>override</apigee.options>
                 <apigee.delay>3000</apigee.delay>
                 <api.testtag>@intg</api.testtag>
@@ -86,40 +66,9 @@
                 <apigee.config.dir>./target/edge</apigee.config.dir>
             </properties>
         </profile>
-        <!--<profile>-->
-            <!--<id>dev</id>-->
-            <!--<properties>-->
-                <!--<apigee.profile>dev</apigee.profile>-->
-                <!--<apigee.env>dev</apigee.env>-->
-                <!--<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>-->
-                <!--<apigee.apiversion>v1</apigee.apiversion>-->
-                <!--<apigee.org>${api.org}</apigee.org>-->
-                <!--<apigee.username>${api.username}</apigee.username>-->
-                <!--<apigee.password>${api.password}</apigee.password>-->
-                <!--<apigee.options>validate,update</apigee.options>-->
-                <!--<apigee.delay>3000</apigee.delay>-->
-                <!--<api.testtag>@intg</api.testtag>-->
-            <!--</properties>-->
-        <!--</profile>-->
-        <!--<profile>-->
-            <!--<id>test</id>-->
-            <!--<properties>-->
-                <!--<apigee.profile>test</apigee.profile>-->
-                <!--<apigee.env>test</apigee.env>-->
-                <!--<apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>-->
-                <!--<apigee.apiversion>v1</apigee.apiversion>-->
-                <!--<apigee.org>${api.org}</apigee.org>-->
-                <!--<apigee.username>${api.username}</apigee.username>-->
-                <!--<apigee.password>${api.password}</apigee.password>-->
-                <!--<apigee.options>validate,update</apigee.options>-->
-                <!--<apigee.delay>3000</apigee.delay>-->
-                <!--<api.testtag>@intg</api.testtag>-->
-            <!--</properties>-->
-        <!--</profile>-->
     </profiles>
 
     <build>
-
         <pluginManagement>
             <plugins>
                 <plugin>
