@@ -83,27 +83,27 @@
         <plugins>
 
             <!-- run jslint -->
-            <!--<plugin>-->
-                <!--<groupId>com.cj.jshintmojo</groupId>-->
-                <!--<artifactId>jshint-maven-plugin</artifactId>-->
-                <!--<version>1.6.0</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>jslint</id>-->
-                        <!--<phase>validate</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>lint</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--<options>curly,eqeqeq,forin,latedef,undef,noempty,nonew,unused</options>-->
-                    <!--<directories>-->
-                        <!--<directory>apiproxy/resources/jsc</directory>-->
-                    <!--</directories>-->
-                    <!--<reporter>jslint</reporter>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>com.cj.jshintmojo</groupId>
+                <artifactId>jshint-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <id>jslint</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>lint</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <options>curly,eqeqeq,forin,latedef,undef,noempty,nonew,unused</options>
+                    <directories>
+                        <directory>apiproxy/resources/jsc</directory>
+                    </directories>
+                    <reporter>jslint</reporter>
+                </configuration>
+            </plugin>
 
             <!-- copy the full apiproxy folder to target folder -->
             <plugin>
