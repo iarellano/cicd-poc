@@ -55,7 +55,6 @@
             <properties>
                 <apigee.profile>test</apigee.profile>
                 <apigee.env>test</apigee.env>
-                <test>yup</test>
                 <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
                 <apigee.apiversion>v1</apigee.apiversion>
                 <apigee.org>${api.org}</apigee.org>
