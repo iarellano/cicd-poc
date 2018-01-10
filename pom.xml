@@ -298,7 +298,6 @@
                             <commandlineArgs>
                                 install
                             </commandlineArgs>
-                            <skip>${apigee.skipTests}</skip>
                         </configuration>
                     </execution>
                     <!-- run unit tests -->
@@ -313,24 +312,23 @@
                             <commandlineArgs>
                                 ./node_modules/mocha/bin/mocha test/unit
                             </commandlineArgs>
-                            <skip>${apigee.skipTests}</skip>
                         </configuration>
                     </execution>
                     <!-- run pingFederate test -->
-                    <execution>
-                        <id>pingFederate</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>node</executable>
-                            <commandlineArgs>
-                                ./node_modules/cucumber/bin/cucumber.js target/test/pingFederateTest/features
-                            </commandlineArgs>
-                            <skip>${apigee.skipTests}</skip>
-                        </configuration>
-                    </execution>
+                    <!--<execution>-->
+                        <!--<id>pingFederate</id>-->
+                        <!--<phase>install</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>exec</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<executable>node</executable>-->
+                            <!--<commandlineArgs>-->
+                                <!--./node_modules/cucumber/bin/cucumber.js target/test/pingFederateTest/features-->
+                            <!--</commandlineArgs>-->
+                            <!--<skip>${apigee.skipTests}</skip>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
                     <!-- run integration tests -->
                     <execution>
                         <id>integration</id>
