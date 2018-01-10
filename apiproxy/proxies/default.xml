@@ -41,6 +41,7 @@
         <BasePath>/bin</BasePath>
         <Properties/>
         <VirtualHost>default</VirtualHost>
+        <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>
     <RouteRule name="google">
         <TargetEndpoint>google</TargetEndpoint>
