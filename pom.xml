@@ -76,6 +76,32 @@
                 <api.clientSecret>mA8kEppJ5DiS0Knk</api.clientSecret>
             </properties>
         </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <apigee.profile>prod</apigee.profile>
+                <apigee.env>test</apigee.env>
+                <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
+                <apigee.apiversion>v1</apigee.apiversion>
+                <apigee.org>${api.org}</apigee.org>
+                <apigee.username>${api.username}</apigee.username>
+                <apigee.password>${api.password}</apigee.password>
+                <apigee.authtype>basic</apigee.authtype>
+                <apigee.options>override</apigee.options>
+                <apigee.delay>3000</apigee.delay>
+                <api.testtag>@intg</api.testtag>
+                <apigee.config.options>create</apigee.config.options>
+                <apigee.config.dir>./target/edge</apigee.config.dir>
+
+                <api.northbound.domain>isciad94-trial-prod.apigee.net</api.northbound.domain>
+                <api.basepath>/bin</api.basepath>
+                <api.name>httpbin</api.name>
+                <api.tokenDomain>isciad94-trial-prod.apigee.net</api.tokenDomain>
+                <api.tokenBasepath>/v1/mg/oauth2</api.tokenBasepath>
+                <api.clientId>NeudUQOsbLOKxyQyShoGcoI7NqD4yLHJ</api.clientId>
+                <api.clientSecret>mA8kEppJ5DiS0Knk</api.clientSecret>
+            </properties>
+        </profile>
     </profiles>
 
     <build>
