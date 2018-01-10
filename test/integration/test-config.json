@@ -1,13 +1,11 @@
 {
     "parameters": {
-        "domain": "apidev.catdevservices.com",
-        "basepath": "/spec-check",
-        "apiproxy": "spec-check-v1",
-        "tokenDomain": "apidev.catdevservices.com",
-        "tokenBasepath": "/identity",
-        "pingTokenDomain": "fedloginqa.cat.com",
-        "pingTokenBasepath": "/as",
-        "pingClientId": "__PING_CLIENT_ID__",
-        "pingClientSecret": "__PING_CLIENT_SECRET__"
+        "domain": "isciad94-trial-test.apigee.net",
+        "basepath": "/bin",
+        "apiproxy": "httpbin",
+        "tokenDomain": "isciad94-trial-test.apigee.net",
+        "tokenBasepath": "/v1/mg/oauth2",
+        "clientId": "NeudUQOsbLOKxyQyShoGcoI7NqD4yLHJ",
+        "clientSecret": "mA8kEppJ5DiS0Knk"
     }
 }

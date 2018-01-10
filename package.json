@@ -11,7 +11,8 @@
 		"chai": "^3",
 		"chai-fuzzy": "^1",
 		"mocha": "^2",
-		"sinon": "^1"
+		"sinon": "^1",
+		"atob": "^2.0.3"
 	},
 	"jshintConfig": {
         "predef":["console","context"],

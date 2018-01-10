@@ -11,11 +11,6 @@ var clientId = config.parameters.clientId;
 var clientSecret = config.parameters.clientSecret;
 var tokenDomain = config.parameters.tokenDomain;
 var tokenBasepath = config.parameters.tokenBasepath;
-var pingTokenDomain = config.parameters.pingTokenDomain;
-var pingTokenBasepath = config.parameters.pingTokenBasepath;
-var pingClientId = config.parameters.pingClientId;
-var pingClientSecret = config.parameters.pingClientSecret;
-
 
 console.log('api parameters: [' + domain + ', ' + basepath + ']');
 
@@ -30,10 +25,6 @@ module.exports = function() {
         this.apickli.storeValueInScenarioScope("clientSecret", clientSecret);
         this.apickli.storeValueInScenarioScope("tokenDomain", tokenDomain );
         this.apickli.storeValueInScenarioScope("tokenBasepath", tokenBasepath);
-        this.apickli.storeValueInScenarioScope("pingTokenDomain", pingTokenDomain );
-        this.apickli.storeValueInScenarioScope("pingTokenBasepath", pingTokenBasepath);
-        this.apickli.storeValueInScenarioScope("pingClientId", pingClientId);
-        this.apickli.storeValueInScenarioScope("pingClientSecret", pingClientSecret);
         callback();
     });
 };
