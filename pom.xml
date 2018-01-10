@@ -45,6 +45,7 @@
         <api.org>isciad94-trial</api.org>
         <api.username>isciad94@gmail.com</api.username>
         <api.password>b78h*0gE</api.password>
+        <api.host>isciad94-trial-test.apigee.net</api.host>
     </properties>
 
 
@@ -65,6 +66,14 @@
                 <api.testtag>@intg,@api</api.testtag>
                 <apigee.config.options>create</apigee.config.options>
                 <apigee.config.dir>./target/edge</apigee.config.dir>
+
+                <api.northbound.domain>${api.host}</api.northbound.domain>
+                <api.basepath>/bin</api.basepath>
+                <api.name>httpbin</api.name>
+                <api.tokenDomain>${api.host}</api.tokenDomain>
+                <api.tokenBasepath>/v1/mg/oauth2</api.tokenBasepath>
+                <api.clientId>NeudUQOsbLOKxyQyShoGcoI7NqD4yLHJ</api.clientId>
+                <api.clientSecret>mA8kEppJ5DiS0Knk</api.clientSecret>
             </properties>
         </profile>
     </profiles>
@@ -143,68 +152,62 @@
                 </executions>
             </plugin>
 
-            <!--<plugin>-->
-                <!--<groupId>com.google.code.maven-replacer-plugin</groupId>-->
-                <!--<artifactId>replacer</artifactId>-->
-                <!--<version>1.5.2</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>replace</id>-->
-                        <!--<phase>process-resources</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>replace</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-                <!--<configuration>-->
-                    <!--<basedir>${target.root.dir}</basedir>-->
-                    <!--<includes>-->
-                        <!--<include>apiproxy/proxies/default.xml</include>-->
-                        <!--<include>apiproxy/parts-inquiry-v1.xml</include>-->
-                        <!--<include>test/integration/test-config.json</include>-->
-                        <!--<include>test/pingFederateTest/features/pingFederate.feature</include>-->
-                        <!--<include>test/pingFederateTest/test-config.json</include>-->
-                        <!--<include>test/performance/test.jmx</include>-->
-                        <!--<include>test/performance/testdata.csv</include>-->
-                        <!--<include>edge/org/apiProducts.json</include>-->
-                    <!--</includes>-->
-                    <!--<replacements>-->
-                        <!--<replacement>-->
-                            <!--<token>/parts-inquiry</token>-->
-                            <!--<value>/parts-inquiry${deployment.suffix}</value>-->
-                        <!--</replacement>-->
-                        <!--<replacement>-->
-                            <!--<token>parts-inquiry-v1</token>-->
-                            <!--<value>parts-inquiry-${deployment.suffix}v1</value>-->
-                        <!--</replacement>-->
-                        <!--<replacement>-->
-                            <!--<token>apidev.catdevservices.com</token>-->
-                            <!--<value>${api.northbound.domain}</value>-->
-                        <!--</replacement>-->
-                        <!--<replacement>-->
-                            <!--<token>@description</token>-->
-                            <!--<value>${buildName} build source version ${commit} from branch ${branch} by ${user.name}-->
-                            <!--</value>-->
-                        <!--</replacement>-->
-                        <!--<replacement>-->
-                            <!--<token>"ENVIRONMENT"</token>-->
-                            <!--<value>${api.productEnvs}</value>-->
-                        <!--</replacement>-->
-                        <!--<replacement>-->
-                            <!--<token>fedloginqa.cat.com</token>-->
-                            <!--<value>${api.pingTokenDomain}</value>-->
-                        <!--</replacement>-->
-                        <!--<replacement>-->
-                            <!--<token>__PING_CLIENT_ID__</token>-->
-                            <!--<value>${api.pingClientId}</value>-->
-                        <!--</replacement>-->
-                        <!--<replacement>-->
-                            <!--<token>__PING_CLIENT_SECRET__</token>-->
-                            <!--<value>${api.pingClientSecret}</value>-->
-                        <!--</replacement>-->
-                    <!--</replacements>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+                <version>1.5.2</version>
+                <executions>
+                    <execution>
+                        <id>replace</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <basedir>${target.root.dir}</basedir>
+                    <includes>
+                        <include>test/integration/test-config.json</include>
+                    </includes>
+                    <replacements>
+                        <replacement>
+                            <token>__DOMAIN__</token>
+                            <value>${api.northbound.domain}</value>
+                        </replacement>
+
+                        <replacement>
+                            <token>__BASEPATH__</token>
+                            <value>${api.basepath}</value>
+                        </replacement>
+
+                        <replacement>
+                            <token>__APIPROXY__</token>
+                            <value>${api.name}</value>
+                        </replacement>
+
+                        <replacement>
+                            <token>__TOKEN_DOMAIN_</token>
+                            <value>${api.tokenDomain}</value>
+                        </replacement>
+
+                        <replacement>
+                            <token>__TOKEN_BASEPATH__</token>
+                            <value>${api.tokenBasepath}</value>
+                        </replacement>
+
+                        <replacement>
+                            <token>__CLIENT_ID__</token>
+                            <value>${api.clientId}</value>
+                        </replacement>
+
+                        <replacement>
+                            <token>__CLIENT__SECRET__</token>
+                            <value>${api.clientSecret}</value>
+                        </replacement>
+                    </replacements>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>io.apigee.build-tools.enterprise4g</groupId>
@@ -408,13 +411,13 @@
                         </configuration>
                     </execution>
                     <!-- comment this out to leave the target dir for debugging, post mortem -->
-                    <execution>
-                        <id>auto-clean-install</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                    </execution>
+                    <!--<execution>-->
+                        <!--<id>auto-clean-install</id>-->
+                        <!--<phase>install</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>clean</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
                 </executions>
             </plugin>
         </plugins>

@@ -1,11 +1,11 @@
 {
     "parameters": {
-        "domain": "isciad94-trial-test.apigee.net",
-        "basepath": "/bin",
-        "apiproxy": "httpbin",
-        "tokenDomain": "isciad94-trial-test.apigee.net",
-        "tokenBasepath": "/v1/mg/oauth2",
-        "clientId": "NeudUQOsbLOKxyQyShoGcoI7NqD4yLHJ",
-        "clientSecret": "mA8kEppJ5DiS0Knk"
+        "domain": "__DOMAIN__",
+        "basepath": "__BASEPATH__",
+        "apiproxy": "__APIPROXY__",
+        "tokenDomain": "__TOKEN_DOMAIN_",
+        "tokenBasepath": "__TOKEN_BASEPATH__",
+        "clientId": "__CLIENT_ID__",
+        "clientSecret": "__CLIENT__SECRET__"
     }
 }
