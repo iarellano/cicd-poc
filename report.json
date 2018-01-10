@@ -1,0 +1,213 @@
+[
+  {
+    "description": "  As API administrator\n  I want to monitor proxy and idempotent backend services\n  So I can alert when services are offline",
+    "elements": [
+      {
+        "id": "api-proxy-health;verify-the-resource-/familes-is-responding-using-an-access-token-from-ping",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Verify the resource /familes is responding using an access token from Ping",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before ",
+            "result": {
+              "status": "passed",
+              "duration": 480118
+            },
+            "hidden": true,
+            "match": {
+              "location": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/step_definitions/init.js:19"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I have a valid access token",
+            "result": {
+              "status": "passed",
+              "duration": 256735315
+            },
+            "line": 9,
+            "match": {
+              "location": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/step_definitions/oauth.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I GET /ip",
+            "result": {
+              "status": "passed",
+              "duration": 343517444
+            },
+            "line": 10,
+            "match": {
+              "location": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/step_definitions/apickli-gherkin.js:64"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "response code should be 200",
+            "result": {
+              "status": "passed",
+              "duration": 217699
+            },
+            "line": 11,
+            "match": {
+              "location": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/step_definitions/apickli-gherkin.js:155"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "response header Content-Type should be application/json",
+            "result": {
+              "status": "passed",
+              "duration": 172102
+            },
+            "line": 12,
+            "match": {
+              "location": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/step_definitions/apickli-gherkin.js:176"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "response body path $.ip should be ^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}(,\\s*\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})*$",
+            "result": {
+              "status": "passed",
+              "duration": 528987
+            },
+            "line": 13,
+            "match": {
+              "location": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/step_definitions/apickli-gherkin.js:218"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "response body path $.uuid should be ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "result": {
+              "status": "passed",
+              "duration": 171643
+            },
+            "line": 14,
+            "match": {
+              "location": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/step_definitions/apickli-gherkin.js:218"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@api",
+            "line": 1
+          },
+          {
+            "name": "@api",
+            "line": 7
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "api-proxy-health",
+    "keyword": "Feature",
+    "line": 2,
+    "name": "API proxy health",
+    "tags": [
+      {
+        "name": "@api",
+        "line": 1
+      }
+    ],
+    "uri": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/api.feature"
+  },
+  {
+    "description": "\tAs an API consumer\n\tI want consistent and meaningful error responses\n\tSo that I can handle the errors correctly",
+    "elements": [
+      {
+        "id": "error-handling;get-/foo-request-not-found",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "GET /foo request not found",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before ",
+            "result": {
+              "status": "passed",
+              "duration": 64333
+            },
+            "hidden": true,
+            "match": {
+              "location": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/step_definitions/init.js:19"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I have a valid access token",
+            "result": {
+              "status": "passed",
+              "duration": 229639724
+            },
+            "line": 9,
+            "match": {
+              "location": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/step_definitions/oauth.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I GET /foo",
+            "result": {
+              "status": "passed",
+              "duration": 112352809
+            },
+            "line": 10,
+            "match": {
+              "location": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/step_definitions/apickli-gherkin.js:64"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "response code should be 404",
+            "result": {
+              "status": "passed",
+              "duration": 81529
+            },
+            "line": 11,
+            "match": {
+              "location": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/step_definitions/apickli-gherkin.js:155"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@intg",
+            "line": 1
+          },
+          {
+            "name": "@foo",
+            "line": 7
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "error-handling",
+    "keyword": "Feature",
+    "line": 2,
+    "name": "Error handling",
+    "tags": [
+      {
+        "name": "@intg",
+        "line": 1
+      }
+    ],
+    "uri": "/Users/isaiasarellano/work/google/manulife/httpbin/target/test/integration/features/errorHandling.feature"
+  }
+]
