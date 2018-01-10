@@ -80,7 +80,6 @@
             <id>prod</id>
             <properties>
                 <apigee.profile>prod</apigee.profile>
-                <apigee.test>prod</apigee.test>
                 <apigee.env>prod</apigee.env>
                 <apigee.hosturl>https://api.enterprise.apigee.com</apigee.hosturl>
                 <apigee.apiversion>v1</apigee.apiversion>
